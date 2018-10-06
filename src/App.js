@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import ButtonToggle from './components/buttontoggle/index.js';
+import ButtonMomentary from './components/buttonmomentary/index.js';
 import moment from 'moment';
 
 class App extends Component {
@@ -11,6 +12,8 @@ class App extends Component {
 
     super(props);
     this.handleButtonToggleChanged = this.handleButtonToggleChanged.bind(this);
+    this.handleButtonMomentaryChanged = this.handleButtonMomentaryChanged.bind(this);
+    this.handleSliderChanged = this.handleSliderChanged.bind(this);
 
     this.state = {
       timeStamp : moment(),
@@ -19,7 +22,7 @@ class App extends Component {
       slider16 : DEFAULT_VALUE,
       slider17 : DEFAULT_VALUE,
       buttonToggle18 : DEFAULT_VALUE,
-      buttonMomentary19 : DEFAULT_VALUE
+      buttonMomentary19 : DEFAULT_VALUE,
     }
   }
 
@@ -54,20 +57,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
-            Edit <code>src/App.js</code> and save to reload. TestTest
-          </p>
-          <ButtonToggle id={14}></ButtonToggle>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <ButtonToggle id={18}></ButtonToggle>
+          <ButtonMomentary id={19}></ButtonMomentary>
         </header>
+        
       </div>
     );
   }

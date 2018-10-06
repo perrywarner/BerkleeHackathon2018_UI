@@ -1,7 +1,17 @@
 .disabled {
     opacity: 65%;
+    border: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-top: none;
 }
 
 .enabled {
     opacity: 100%;
+    border: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-top: none;
 }

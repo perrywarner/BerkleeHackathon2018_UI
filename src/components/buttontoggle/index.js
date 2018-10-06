@@ -6,12 +6,16 @@ import '../buttontoggle/style.css';
 class ButtonToggle extends Component {
     constructor(props) {
         super(props);
-        this.state = { disabled: false };
+        this.state = { 
+            disabled: false,
+            value: 0,
+        };
     }
 
     onButtonClick() {
-        const previousState = this.state.disabled;
-        this.setState({ disabled: !previousState });
+        let nextDisabledState = !this.state.disabled;
+        let nextValue = nextDisabledState ? 0 : 127;
+        this.setState({ disabled: nextDisabledState, value: nextValue });
     }
 
     render() {

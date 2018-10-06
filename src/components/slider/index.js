@@ -10,7 +10,8 @@ class Slider extends Component {
     render(){
         return(
             <div>
-                
+                <Slider></Slider>
+                <Range></Range>
             </div>
         )
     }
