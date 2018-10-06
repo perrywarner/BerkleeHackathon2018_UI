@@ -13,7 +13,7 @@ class App extends Component {
     this.handleButtonToggleChanged = this.handleButtonToggleChanged.bind(this);
 
     this.state = {
-      timeStamp : moment.format(),
+      timeStamp : moment(),
       slider14 : DEFAULT_VALUE,
       slider15 : DEFAULT_VALUE,
       slider16 : DEFAULT_VALUE,
