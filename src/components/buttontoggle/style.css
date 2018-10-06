@@ -1,0 +1,7 @@
+.disabled {
+    opacity: 65%;
+}
+
+.enabled {
+    opacity: 100%;
+}
