@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 // import logo from './logo.svg';
 import './App.css';
 import ButtonToggle from './components/buttontoggle/index.js';
@@ -15,6 +16,7 @@ class App extends Component {
     this.handleButtonToggleChanged = this.handleButtonToggleChanged.bind(this);
     this.sendStateToController = this.sendStateToController.bind(this);
     this.interval = null;
+    this.myRef = React.createRef();
 
     this.state = {
       timeStamp: moment(),
@@ -34,7 +36,7 @@ class App extends Component {
 
   eventLoop() {
     this.interval = setInterval(() => {
-      this.sendStateToController()
+      this.sendStateToController();
     }, 100);
   }
 
@@ -51,10 +53,10 @@ class App extends Component {
       mode: 'no-cors',
       body: JSON.stringify({
         "time": this.state.timeStamp,
-        "14": this.state.slider14, 
-        "15": this.state.slider15, 
-        "16": this.state.slider16, 
-        "17": this.state.slider17, 
+        "14": parseInt(ReactDOM.findDOMNode(this.refs.s14).getElementsByClassName("rc-slider-handle")[0].attributes[5].value), 
+        "15": parseInt(ReactDOM.findDOMNode(this.refs.s15).getElementsByClassName("rc-slider-handle")[0].attributes[5].value), 
+        "16": parseInt(ReactDOM.findDOMNode(this.refs.s16).getElementsByClassName("rc-slider-handle")[0].attributes[5].value), 
+        "17": parseInt(ReactDOM.findDOMNode(this.refs.s17).getElementsByClassName("rc-slider-handle")[0].attributes[5].value), 
         "18": this.state.buttonToggle18, 
         "19": this.state.buttonMomentary19
       }) 
@@ -91,16 +93,16 @@ class App extends Component {
           <Container>
             <Row>
               <Col>
-                <SliderImplementation id={14} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+                <SliderImplementation id={14} ref="s14" min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
               </Col>
               <Col>
-                <SliderImplementation id={15} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+                <SliderImplementation id={15} ref="s15" min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
               </Col>
               <Col>
-                <SliderImplementation id={16} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+                <SliderImplementation id={16} ref="s16" min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
               </Col>
               <Col>
-                <SliderImplementation id={17} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+                <SliderImplementation id={17} ref="s17" min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
               </Col>
               <Col>
                 <ButtonToggle id={18}></ButtonToggle>
