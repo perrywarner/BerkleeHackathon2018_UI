@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "fetch": "^1.1.0",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "qwerty-hancock": "^0.6.0",

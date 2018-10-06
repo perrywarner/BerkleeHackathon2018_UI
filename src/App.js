@@ -10,12 +10,11 @@ import { Container, Row, Col } from 'reactstrap';
 class App extends Component {
 
   constructor(props) {
-    const DEFAULT_VALUE = 0;
-
+    const DEFAULT_VALUE = 127;
     super(props);
     this.handleButtonToggleChanged = this.handleButtonToggleChanged.bind(this);
-    this.handleButtonMomentaryChanged = this.handleButtonMomentaryChanged.bind(this);
-    this.handleSliderChanged = this.handleSliderChanged.bind(this);
+    this.sendStateToController = this.sendStateToController.bind(this);
+    this.interval = null;
 
     this.state = {
       timeStamp: moment(),
@@ -30,17 +29,44 @@ class App extends Component {
 
   componentDidMount() {
     // call eventLoop() here
+    this.eventLoop();
   }
 
   eventLoop() {
-    // timer that calls sendStateToController() every 100ms
-    // use moment.js (https://momentjs.com/guides/)
-    // likely important: reference http://momentjs.com/docs/#/parsing/unix-timestamp-milliseconds/ millisecond time differential
+    this.interval = setInterval(() => {
+      this.sendStateToController()
+    }, 100);
   }
 
   sendStateToController() {
     // use Fetch API to post JSON object of each of this application's state values 
-    // to our backend here. for reference: (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 
+    // to our backend here. for reference: (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+    var myHeaders = new Headers();
+    myHeaders.append('Accept', 'application/json');
+    myHeaders.append('Content-Type', 'application/json');
+    
+    var myInit = { 
+      method: 'POST',
+      headers: myHeaders,
+      mode: 'no-cors',
+      body: JSON.stringify({
+        "time": this.state.timeStamp,
+        "14": this.state.slider14, 
+        "15": this.state.slider15, 
+        "16": this.state.slider16, 
+        "17": this.state.slider17, 
+        "18": this.state.buttonToggle18, 
+        "19": this.state.buttonMomentary19
+      }) 
+    };
+  
+    var url = "https://berklee.herokuapp.com/midi"
+    var myRequest = new Request(url);
+
+    fetch(myRequest,myInit).then(function(response) {
+      
+    });
+    return;
   }
 
   handleButtonToggleChanged(id, value) {
