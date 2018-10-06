@@ -4,6 +4,8 @@ import './App.css';
 import ButtonToggle from './components/buttontoggle/index.js';
 import ButtonMomentary from './components/buttonmomentary/index.js';
 import moment from 'moment';
+import SliderImplementation from './components/slider';
+import { Container, Row, Col } from 'reactstrap';
 
 class App extends Component {
 
@@ -16,13 +18,13 @@ class App extends Component {
     this.handleSliderChanged = this.handleSliderChanged.bind(this);
 
     this.state = {
-      timeStamp : moment(),
-      slider14 : DEFAULT_VALUE,
-      slider15 : DEFAULT_VALUE,
-      slider16 : DEFAULT_VALUE,
-      slider17 : DEFAULT_VALUE,
-      buttonToggle18 : DEFAULT_VALUE,
-      buttonMomentary19 : DEFAULT_VALUE,
+      timeStamp: moment(),
+      slider14: DEFAULT_VALUE,
+      slider15: DEFAULT_VALUE,
+      slider16: DEFAULT_VALUE,
+      slider17: DEFAULT_VALUE,
+      buttonToggle18: DEFAULT_VALUE,
+      buttonMomentary19: DEFAULT_VALUE,
     }
   }
 
@@ -54,14 +56,41 @@ class App extends Component {
   }
 
   render() {
+    const sliderRangeMinBound = 0;
+    const sliderRangeMaxBound = 127;
+    // const sliderDefaultValue = 64;
     return (
       <div className="App">
         <header className="App-header">
-          <ButtonToggle id={18}></ButtonToggle>
-          <ButtonMomentary id={19}></ButtonMomentary>
+          <Container>
+            <Row>
+              <Col>
+                <SliderImplementation id={14} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+              </Col>
+              <Col>
+                <SliderImplementation id={15} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+              </Col>
+              <Col>
+                <SliderImplementation id={16} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+              </Col>
+              <Col>
+                <SliderImplementation id={17} min={sliderRangeMinBound} max={sliderRangeMaxBound}></SliderImplementation>
+              </Col>
+              <Col>
+                <ButtonToggle id={18}></ButtonToggle>
+                <br/>
+                <br/>
+                <br/>
+                <ButtonMomentary id={19}></ButtonMomentary>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+              </Col>
+            </Row>
+          </Container>
         </header>
-        
-      </div>
+      </div >
     );
   }
 }

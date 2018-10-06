@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Slider, { Range } from 'rc-slider';
+// import ReactDOM from 'react-dom';
+// import Slider from 'rc-slider';
 // We can just import Slider or Range to reduce bundle size
-// import Slider from 'rc-slider/lib/Slider';
-// import Range from 'rc-slider/lib/Range';
+import Slider from 'rc-slider/lib/Slider';
 import 'rc-slider/assets/index.css';
+import '../slider/style.css';
 
-class Slider extends Component {
+class SliderImplementation extends Component {
+    constructor(props){
+        super(props);
+        console.log("Slider Constructor");
+    }
+
     render(){
         return(
             <div>
-                <Slider></Slider>
-                <Range></Range>
+                <Slider vertical={true} min={this.props.min} max={this.props.max} className={"slider"} style={{ height: 200 }}></Slider>
             </div>
         )
     }
 }
+
+export default SliderImplementation;
