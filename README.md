@@ -14,7 +14,7 @@ This project was built for and won **grand prize** at the [AT&T Entertainment Ha
 - Provided a crucial [product managment](https://en.wikipedia.org/wiki/Product_management) role from the beginning through the end of the hackathon. As a student at Berklee School of Music, Zac and came onto the project with a better idea of useful products for the music industry than Zakar or Perry. Zac later took the lead on both demoing and pitching the product at the end of the hackathon, clinching us the grand prize.
 - Senior at Berklee School of Music at the time.
 
-[Zakar Handricken](https://www.linkedin.com/in/zakarh/) ([GitHub](https://github.com/zakarh)): Full-Stack Developer 
+[Zakar Handricken](https://www.linkedin.com/in/zakarh/) ([GitHub](https://github.com/zakarh)): Computer Scientist 
 - Built the Python based [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) web server and hosted it on [Heroku](https://www.heroku.com/) at https://berklee.herokuapp.com/midi (defunct as of 2021)
 - [Connected the MIDI Controller GUI to the web server](https://github.com/perrywarner/BerkleeHackathon2018_UI/commit/ac3e0378aad7dcb3457dde3301786687ef93ce9b) after spinning it up
 - Saved the project with a [critical bug fix to the GUI](https://github.com/perrywarner/BerkleeHackathon2018_UI/commit/b70c4cbc91414778b1759eed3b827c50f2456472) less then 20 minutes before presenting at the end of the hackathon after it was found that the GUI wasn't sending any MIDI codes in the POST requests to the backend.
