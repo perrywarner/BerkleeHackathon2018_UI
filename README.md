@@ -11,7 +11,7 @@ This project was built for and won **grand prize** at the [AT&T Entertainment Ha
 [Zachary Towbes](https://www.linkedin.com/in/zachary-towbes-a6b399149/): Audio Engineer and Product Manager
 - Created the pre-programmed melody in [Ableton](https://en.wikipedia.org/wiki/Ableton_Live)
 - Wrote the custom [Max7](https://cycling74.com/products/max/) Ableton adapter & server polling script 
-- Provided a crucial [product managment](https://en.wikipedia.org/wiki/Product_management) role from the beginning through the end of the hackathon. As a student at Berklee School of Music, Zac and came onto the project with a better idea of useful products for the music industry than Zakar or Perry. Zac later took the lead on both demoing and pitching the product at the end of the hackathon, clinching us the grand prize.
+- Provided a crucial [product managment](https://en.wikipedia.org/wiki/Product_management) role from the beginning through the end of the hackathon. As a student at Berklee School of Music, Zac and came onto the project with a better idea of useful products for the music industry than Perry or his friend. Zac later took the lead on both demoing and pitching the product at the end of the hackathon, clinching us the grand prize.
 - Senior at Berklee School of Music at the time.
 
 [Perry Warner](https://www.linkedin.com/in/perry-warner-132b0682/) ([GitHub](https://github.com/perrywarner)): Frontend Developer and System Architect
